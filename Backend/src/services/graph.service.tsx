@@ -41,3 +41,13 @@ export function buildGraph(word: string, data: any) {
     edges
   };
 }
+
+/*
+ * Graph Builder
+ *
+ * Converts Wordnik relationship data into a graph structure.
+ * - Creates nodes for the source word and related words.
+ * - Creates edges based on relationship types.
+ * - Assigns edge weights according to relationship strength.
+ * - Removes duplicate nodes before returning the graph.
+ */
