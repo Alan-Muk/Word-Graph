@@ -18,3 +18,14 @@ app.get("/", (_, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+/*
+ * Server Entry Point
+ *
+ * Initializes the Express application:
+ * - Loads environment variables from .env
+ * - Sets up JSON parsing middleware
+ * - Registers word-related routes under /word
+ * - Provides a health check endpoint at /
+ * - Starts the server on the configured PORT
+ */
