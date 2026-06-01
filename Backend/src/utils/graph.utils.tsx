@@ -8,3 +8,11 @@ export function dedupeNodes(nodes: Node[]): Node[] {
     return true;
   });
 }
+
+/*
+ * Node Deduplication Utility
+ *
+ * Removes duplicate nodes from a graph based on node.id.
+ * Uses a Set to track seen IDs and filters out repeats,
+ * ensuring each node appears only once in the final graph.
+ */
