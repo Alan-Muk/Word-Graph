@@ -13,3 +13,15 @@ router.get("/:word", async (req, res) => {
 });
 
 export default router;
+
+/*
+ * Route: GET /:word
+ *
+ * Purpose:
+ * - Accepts a word as a URL parameter.
+ * - Retrieves the word graph from the service layer.
+ * - Returns the graph data as JSON.
+ *
+ * Error Handling:
+ * - Returns HTTP 500 if the word graph cannot be fetched.
+ */
