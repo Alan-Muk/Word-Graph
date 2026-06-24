@@ -1,11 +1,11 @@
-Word Graph Explorer
+# Word Graph Explorer
 
 An interactive semantic graph that lets you explore relationships between words and discover connections through a dynamic network visualization.
 
 Built using Wordnik for linguistic data and Cytoscape.js for graph rendering.
 
 
-Features
+# Features
 
 Word Exploration
 Search any English word
@@ -27,7 +27,7 @@ Auto-Expanding Graph
 Automatically expands the graph when searching for paths
 Ensures deeper connections can be discovered dynamically
 
-Tech Stack
+# Tech Stack
 
 Frontend
 React + TypeScript
@@ -37,8 +37,9 @@ Backend
 Node.js + Express
 Wordnik
 
-Project Structure
+# Project Structure
 
+```
 root/
 ├── backend/
 │   └── src/
@@ -53,8 +54,9 @@ root/
 │       ├── services/
 │       └── types/
 
+```
 
-How It Works
+# How It Works
 
 The frontend sends a request to the backend
 The backend fetches related words from Wordnik
