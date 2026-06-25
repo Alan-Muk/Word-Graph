@@ -10,6 +10,17 @@ router.get("/:word", async (req, res) => {
 
     const graph = await expandGraph(word, 2);
 
+    const data = await fetchNode(word);
+
+    if (!data || data.error) {
+      return {
+        nodes: [
+          { data: { id: word, label: word } }
+        ],
+        edges: []
+      };
+    }
+
     res.json(graph);
   } catch (err: any) {
     console.error(err.message);
