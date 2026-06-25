@@ -1,77 +1,70 @@
-Word Graph Explorer
+#  Word Graph Explorer
 
-An interactive semantic graph that lets you explore relationships between words and discover connections through a dynamic network visualization.
+A semantic graph navigation system that finds conceptual paths between words using **ConceptNet** and visualizes them as an interactive graph.
 
-Built using Wordnik for linguistic data and Cytoscape.js for graph rendering.
+Built with **TypeScript, Node.js, React, and Cytoscape.js**.
 
+---
 
-Features
+##  Features
 
-Word Exploration
-Search any English word
-Instantly visualize related words as a graph
-Click nodes to expand and explore further
+-  Semantic graph built from ConceptNet
+-  Shortest path discovery between concepts (Dijkstra-based)
+-  Interactive graph visualization (Cytoscape.js)
+-  Animated traversal of semantic paths
+-  Retry + caching layer for unstable external API calls
+-  Fallback-safe backend (never crashes UI)
 
-Semantic Graph
-Words are nodes
-Relationships (synonyms, antonyms, etc.) are edges
-Color-coded connections for clarity
+---
 
-Shortest Path Finder
-Find the shortest semantic path between two words
-Uses weighted relationships:
-Synonyms = strongest connection
-Antonyms = weakest connection
+##  How it works
 
-Auto-Expanding Graph
-Automatically expands the graph when searching for paths
-Ensures deeper connections can be discovered dynamically
+1. User inputs two words (e.g. `dog → car`)
+2. Backend queries ConceptNet:
+   - expands semantic relationships
+   - builds a weighted graph
+3. Pathfinding algorithm finds shortest conceptual route
+4. Frontend visualizes:
+   - full graph
+   - animated path traversal step-by-step
 
-Tech Stack
+---
 
-Frontend
-React + TypeScript
-Cytoscape.js
-Vite
-Backend
-Node.js + Express
-Wordnik
+##  Architecture
 
-Project Structure
+Frontend (React + Cytoscape)
+        ↓
+Backend (Express + TypeScript)
+        ↓
+ConceptNet API
+        ↓
+Graph Builder + Dijkstra Pathfinding
 
-root/
-├── backend/
-│   └── src/
-│       ├── routes/
-│       ├── services/
-│       ├── clients/
-│       └── types/
-│
-├── frontend/
-│   └── src/
-│       ├── components/
-│       ├── services/
-│       └── types/
+---
 
+##  Tech Stack
 
-How It Works
+### Frontend
+- React
+- Vite
+- Cytoscape.js
+- TypeScript
 
-The frontend sends a request to the backend
-The backend fetches related words from Wordnik
-Data is transformed into a graph structure:
-Nodes → words
-Edges → relationships
-The frontend renders the graph using Cytoscape.js
-Shortest path is calculated using Dijkstra’s algorithm
+### Backend
+- Node.js
+- Express
+- TypeScript
+- Axios
 
-Edge Weights
+### External Data
+- ConceptNet Knowledge Graph
 
-Relationship	Weight
-Synonym	1
-Similar	2
-Hypernym	3
-Hyponym	3
-Antonym	5
+---
 
-Lower weight = stronger semantic connection
+##  Installation
 
+### 1. Clone repo
+
+```bash
+git clone https://github.com/YOUR_USERNAME/word-graph.git
+cd word-graph
