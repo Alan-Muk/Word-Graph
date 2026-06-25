@@ -1,0 +1,23 @@
+import { Router } from "express";
+import { normalize } from "../util/normalise";
+import { expandGraph } from "../graph/expand";
+
+const router = Router();
+
+router.get("/:word", async (req, res) => {
+  try {
+    const word = normalize(req.params.word);
+
+    const graph = await expandGraph(word, 2);
+
+    res.json(graph);
+  } catch (err: any) {
+    console.error(err.message);
+
+    res.status(503).json({
+      error: "Graph expansion failed"
+    });
+  }
+});
+
+export default router;
